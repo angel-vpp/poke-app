@@ -1,0 +1,1 @@
+Bug: Cuando selecionas los favoritos en el header y tienes algún pokemon como favorito pero ninguno de ellos está cargado se muestra la pantalla de ninguno en filtros en lugar del botón de cargar más solo, al seleccionar como favorito a algún pokemon cargado puedes ver ya el botón de cargar más para actualizar tu lista desde dentro de la sección de favs.

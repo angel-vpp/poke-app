@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 0 0% 85%;
+  --foreground: 210, 20%, 20%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 225 20% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 225 20% 15%;
+
+  --primary: 0 85% 55%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 15% 93%;
+  --secondary-foreground: 225 20% 25%;
+
+  --muted: 220 120% 98%;
+  --muted-foreground: 220 10% 35%;
+
+  --accent: 45 95% 55%;
+  --accent-foreground: 225 25% 10%;
+
+  --destructive: 0 90% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 15% 88%;
+  --input: 220 15% 88%;
+  --ring: 0 75% 50%;
+
+  --radius: 0.75rem;
+
+  /* Tokens Pokédex */
+  --pokedex-red: 0 85% 55%;
+  --pokedex-red-glow: 0 80% 60%;
+  --pokedex-blue: 210 90% 50%;
+  --pokedex-lens: 195 85% 50%;
+  --pokedex-screen: 160 30% 90%;
+
+  /* Colores Tipos */
+  --type-normal: 38 25% 55%;
+  --type-fire: 18 85% 55%;
+  --type-water: 215 85% 55%;
+  --type-electric: 48 90% 50%;
+  --type-grass: 125 55% 45%;
+  --type-ice: 195 65% 55%;
+  --type-fighting: 2 65% 48%;
+  --type-poison: 280 55% 48%;
+  --type-ground: 38 55% 50%;
+  --type-flying: 240 55% 62%;
+  --type-psychic: 340 80% 58%;
+  --type-bug: 72 65% 40%;
+  --type-rock: 42 35% 42%;
+  --type-ghost: 265 40% 45%;
+  --type-dragon: 255 75% 55%;
+  --type-dark: 240 12% 30%;
+  --type-steel: 220 18% 58%;
+  --type-fairy: 330 55% 65%;
+
+  --sidebar-background: 0 0% 97%;
+  --sidebar-foreground: 225 20% 25%;
+  --sidebar-primary: 0 75% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 12% 93%;
+  --sidebar-accent-foreground: 225 20% 25%;
+  --sidebar-border: 220 15% 88%;
+  --sidebar-ring: 0 75% 50%;
+}
+
+.dark {
+  --background: 225 20% 15%;
+  --foreground: 0 0% 98%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 225 20% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 225 20% 15%;
+
+  --primary: 0 75% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 15% 93%;
+  --secondary-foreground: 225 20% 25%;
+
+  --muted: 220 12% 92%;
+  --muted-foreground: 220 10% 45%;
+
+  --accent: 45 95% 55%;
+  --accent-foreground: 225 25% 10%;
+
+  --destructive: 0 84% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 15% 88%;
+  --input: 220 15% 88%;
+  --ring: 0 75% 50%;
+
+  --radius: 0.75rem;
+
+  /* Tokens Pokédex */
+  --pokedex-red: 0 75% 50%;
+  --pokedex-red-glow: 0 80% 60%;
+  --pokedex-blue: 210 90% 50%;
+  --pokedex-lens: 195 85% 50%;
+  --pokedex-screen: 160 30% 90%;
+
+  /* Colores Tipos */
+  --type-normal: 38 25% 55%;
+  --type-fire: 18 85% 55%;
+  --type-water: 215 85% 55%;
+  --type-electric: 48 90% 50%;
+  --type-grass: 125 55% 45%;
+  --type-ice: 195 65% 55%;
+  --type-fighting: 2 65% 48%;
+  --type-poison: 280 55% 48%;
+  --type-ground: 38 55% 50%;
+  --type-flying: 240 55% 62%;
+  --type-psychic: 340 80% 58%;
+  --type-bug: 72 65% 40%;
+  --type-rock: 42 35% 42%;
+  --type-ghost: 265 40% 45%;
+  --type-dragon: 255 75% 55%;
+  --type-dark: 240 12% 30%;
+  --type-steel: 220 18% 58%;
+  --type-fairy: 330 55% 65%;
+
+  --sidebar-background: 0 0% 97%;
+  --sidebar-foreground: 225 20% 25%;
+  --sidebar-primary: 0 75% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 12% 93%;
+  --sidebar-accent-foreground: 225 20% 25%;
+  --sidebar-border: 220 15% 88%;
+  --sidebar-ring: 0 75% 50%;
+}
+
+@theme {
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-pokedex-red: hsl(var(--pokedex-red));
+  --color-pokedex-blue: hsl(var(--pokedex-blue));
+  --color-pokedex-lens: hsl(var(--pokedex-lens));
+  --color-pokedex-screen: hsl(var(--pokedex-screen));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.4s ease-out forwards;
+  --animate-scale-in: scale-in 0.3s ease-out forwards;
+  --animate-bounce-soft: bounce-soft 2s ease-in-out infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounce-soft {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@utility font-pixel {
+  font-family: 'Press Start 2P', cursive;
+}
+
+@utility card-surface {
+  background: linear-gradient(145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(220 15% 97%) 100%);
+  border: 1px solid hsl(220 15% 90%);
+}
+
+@utility card-surface-hover {
+  &:hover {
+    background: linear-gradient(145deg,
+        hsl(0 0% 100%) 0%,
+        hsl(220 15% 96%) 100%);
+    border-color: hsl(0 75% 50% / 0.35);
+    box-shadow: 0 0 20px hsl(0 75% 50% / 0.06), 0 8px 30px hsl(0 0% 0% / 0.08);
+  }
+}
+
+@utility card-hover {
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@utility header-glass {
+  background: linear-gradient(180deg,
+      hsl(0 0% 98% / 0.95) 0%,
+      hsl(0 0% 98% / 0.85) 100%);
+  backdrop-filter: blur(20px) saturate(1.5);
+}
+
+@utility glow-dot {
+  box-shadow:
+    0 0 8px hsl(var(--pokedex-lens) / 0.5),
+    0 0 20px hsl(var(--pokedex-lens) / 0.2),
+    inset 0 -2px 4px hsl(var(--pokedex-lens) / 0.15);
+}
+
+@utility glow-dot-red {
+  box-shadow:
+    0 0 6px hsl(var(--pokedex-red-glow) / 0.4),
+    0 0 15px hsl(var(--pokedex-red-glow) / 0.15);
+}
+
+@utility glow-dot-green {
+  box-shadow:
+    0 0 6px hsl(125 55% 45% / 0.4),
+    0 0 15px hsl(125 55% 45% / 0.15);
+}
+
+@utility glow-dot-yellow {
+  box-shadow:
+    0 0 6px hsl(48 90% 50% / 0.4),
+    0 0 15px hsl(48 90% 50% / 0.15);
+}
+
+@utility stat-bar-fill {
+  background: linear-gradient(90deg, hsl(0 75% 50%), hsl(0 80% 60%));
+}
+
+@utility stat-bar-fill-high {
+  background: linear-gradient(90deg, hsl(125 55% 45%), hsl(150 60% 50%));
+}
+
+@utility pokemon-sprite-glow {
+  filter: drop-shadow(0 4px 12px hsl(0 0% 0% / 0.15));
+}
+
+@utility detail-header-gradient {
+  background: linear-gradient(135deg,
+      hsl(0 75% 50% / 0.08) 0%,
+      hsl(220 15% 97% / 0.8) 100%);
+}
+
+@utility search-input-glow {
+  &:focus {
+    box-shadow: 0 0 0 2px hsl(0 75% 50% / 0.2), 0 0 15px hsl(0 75% 50% / 0.05);
+  }
+}
+
+@utility pokeball-bg {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 30px solid hsl(220 15% 94%);
+    top: -100px;
+    right: -80px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+@keyframes bounceSoft {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
